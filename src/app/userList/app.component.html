@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid" >
+                        <div class="row">  
+                            <div *ngFor = 'let index of dataObj' class="col-lg-6"> 
+                                <div class="well"> 
+                                    <h2>Name: {{index.name}}</h2>
+                                    <p><strong>User Name: </strong>{{index.username}}</p>
+                                    <p><strong>Email:</strong> {{index.email}}</p>
+                                    <p><strong>Address:</strong>
+                                                <span>
+                                                    {{index.address.street}}<br>
+                                                    {{index.address.suite}}<br>
+                                                    {{index.address.city}}, {{index.address.zipcode}}<br>
+                                                </span>
+                                    </p>
+                                    <p><strong>Phone:</strong> {{index.phone}}</p>
+                                    <p><strong>Website: </strong> <a target="_blank" href={{index.website}}>{{index.website}}</a></p>
+                                    <p><strong>Company Name: </strong> {{index.company.name}}</p>
+                                    <button (click)="viewTodoFn(index)" class="btn btn-info">View Todo</button>
+                                </div>
+                             </div> 
+                         </div> 
+                         <ul>
+                      </ul>
+              </div> 
+              <router-outlet></router-outlet>
+

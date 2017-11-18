@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ <div class="overlayBox">
+        <div class="container-fluid custContainer well">
+
+        <div class="clsBtnWrapper"><button class="clsBtn close" (click)="redirect()" title="close">x</button></div>
+        <div class="wrapper">
+        <h2>Name: {{userId.name}}</h2>
+        <input type="text" class="form-control addTodo" [(ngModel)]="newTodo" placeholder="Create TO Do"/>
+        <button class="btn btn-primary addTodoBtn" (click)="addToDo()">Add TODO</button>
+            <ul>
+                <li *ngFor = 'let todo of todoJsonData'>
+                    <div class="view">
+                        <input class="toggle form-control" type="checkbox" [(ngModel)]="todo.completed" >
+                        <label [class.strike]=todo.completed >{{todo.title}}</label>
+                        <button class="btn btn-success" (click)="deleteToDo(todo)">Delete</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
+
